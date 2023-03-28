@@ -2,14 +2,18 @@ body {
   padding: 0;
   margin: 0;
 }
-
+.question,
 nav,
 p,
+a,
 .question {
   padding: 20px;
   margin: 0;
 }
 
+.flash {
+  background-color: rgb(251, 185, 178);
+}
 nav {
   background-color: rgb(193, 242, 242);
 }

@@ -6,23 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/static/app.css">
-  <title>{{title}} </title>
+  <title>{{survey.title}} </title>
 </head>
 
 <body>
   <nav>
-    {{title}}
+    {{survey.title}}
 
   </nav>
   {% for msg in get_flashed_messages() %}
-  <p>{{ msg }}</p>
+  <p class="flash">{{ msg }}</p>
   {% endfor %}
   {% block content %}
-  <p>{{instructions}}</p>
+  <p>{{survey.instructions}}</p>
   <form action="/start" method="POST">
     <button>Start</button>
   </form>
   {% endblock %}
+  {% if session["responses"] %}
+  <p>Survey answers: {{session["responses"]}}</p>
+  {% endif %}
 
 
 </body>
